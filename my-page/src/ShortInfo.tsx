@@ -1,10 +1,18 @@
-import info from './info.json';
+import { Component } from 'react';
 
-export const ShortInfo = () => (
-  <section className="Section">
-    <h2>Info about me</h2>
-    <p><b>Date of birth: </b>{info.shortBio.dateOfBirth}</p>
-    <p><b>City of living: </b>{info.shortBio.city}</p>
-    <p><b>About me: </b>{info.shortBio.aboutMe}</p>
-  </section>
-);
+type ShortBioProps = {
+  dateOfBirth: string,
+  city: string,
+  aboutMe: string
+};
+
+export class ShortInfo extends Component<ShortBioProps> {
+  render() {
+    return <section className="Section">
+      <h2>Info about me</h2>
+      <p><b>Date of birth: </b>{this.props.dateOfBirth}</p>
+      <p><b>City of living: </b>{this.props.city}</p>
+      <p><b>About me: </b>{this.props.aboutMe}</p>
+    </section>
+  }  
+}

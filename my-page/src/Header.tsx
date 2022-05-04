@@ -1,9 +1,11 @@
-import info from './info.json';
+import { FC } from "react";
 
-export const Header = () => (
+type H1Props = {firstName: string};
+
+export const Header: FC<H1Props> = (props) => (
   <header className="App-header">
     <h1>
-      {info.firstName}
+      {props.firstName}
     </h1>
   </header>
 );
